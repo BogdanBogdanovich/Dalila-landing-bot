@@ -159,7 +159,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                 case START_COMMAND:
                     logger.log(Level.INFO, log(START_COMMAND));
                     registerPayment(String.format("В бот выполнен вход, пользователь @%s, фамилия и имя = %s %s, userId = %s", user.getUserName(), user.getLastName(), user.getFirstName(), user.getId()));
-                    this.createPhotoAndMessage(update.getMessage(), START_TEXT, "src/main/java/ru/cheb/service/img.png");
+                    this.createPhotoAndMessage(update.getMessage(), START_TEXT, "img.png");
                     this.createDocumentWithKeyboardAndMessage(update.getMessage(), INFO_TEXT);
                     this.createMessageWithKeyboard(update.getMessage(), PRICE_TEXT, priceKeyboard());
                     this.createVideo(update.getMessage());
@@ -289,19 +289,19 @@ public class TelegramBot extends TelegramLongPollingBot {
 
         // Добавляем фотографии в список
         InputMediaPhoto photo1 = new InputMediaPhoto();
-        photo1.setMedia(new File("src/main/java/ru/cheb/service/photo_2025-02-28_20-32-01.jpg"), "photo1.jpg");
+        photo1.setMedia(new File("photo_2025-02-28_20-32-01.jpg"), "photo1.jpg");
         mediaList.add(photo1);
 
         InputMediaPhoto photo2 = new InputMediaPhoto();
-        photo2.setMedia(new File("src/main/java/ru/cheb/service/photo_2025-02-28_20-32-02.jpg"), "photo2.jpg");
+        photo2.setMedia(new File("photo_2025-02-28_20-32-02.jpg"), "photo2.jpg");
         mediaList.add(photo2);
 
         InputMediaPhoto photo3 = new InputMediaPhoto();
-        photo3.setMedia(new File("src/main/java/ru/cheb/service/photo_2025-02-28_20-32-03.jpg"), "photo3.jpg");
+        photo3.setMedia(new File("photo_2025-02-28_20-32-03.jpg"), "photo3.jpg");
         mediaList.add(photo3);
 
         InputMediaPhoto photo4 = new InputMediaPhoto();
-        photo4.setMedia(new File("src/main/java/ru/cheb/service/photo_2025-02-28_20-32-04.jpg"), "photo4.jpg");
+        photo4.setMedia(new File("photo_2025-02-28_20-32-04.jpg"), "photo4.jpg");
         mediaList.add(photo4);
 
         // Создаем объект SendMediaGroup
