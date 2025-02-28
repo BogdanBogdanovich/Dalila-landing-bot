@@ -160,7 +160,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                     logger.log(Level.INFO, log(START_COMMAND));
                     registerPayment(String.format("В бот выполнен вход, пользователь @%s, фамилия и имя = %s %s, userId = %s", user.getUserName(), user.getLastName(), user.getFirstName(), user.getId()));
                     this.createPhotoAndMessage(update.getMessage(), START_TEXT, "src/main/java/ru/cheb/service/img.png");
-                    this.createDocumentWithKeyboardAndMessage(update.getMessage(), INFO_TEXT, "src/main/java/ru/cheb/service/Планирование.pdf");
+                    this.createDocumentWithKeyboardAndMessage(update.getMessage(), INFO_TEXT);
                     this.createMessageWithKeyboard(update.getMessage(), PRICE_TEXT, priceKeyboard());
                     this.createVideo(update.getMessage());
                     break;
@@ -318,12 +318,12 @@ public class TelegramBot extends TelegramLongPollingBot {
         }
     }
 
-    private void createDocumentWithKeyboardAndMessage(Message message, String text, String pdfUrl) {
-        File document = new File(pdfUrl);
+    private void createDocumentWithKeyboardAndMessage(Message message, String text) {
+
 
         SendDocument sendDocument = new SendDocument();
         try {
-            InputFile inputFile = new InputFile(document);
+            InputFile inputFile = new InputFile("BQACAgIAAxkDAAIDN2fCOBqrnW5oAhp9UP-twAaMDTOHAAKoZgACfwwZSpi7QAtBB1p7NgQ");
             sendDocument = SendDocument.builder()
                     .chatId(message.getChatId().toString())
                     .document(inputFile)
