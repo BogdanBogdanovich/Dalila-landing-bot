@@ -173,7 +173,6 @@ public class TelegramBot extends TelegramLongPollingBot {
                             case NUM_TEXT, ENTER_TEXT, CONS_TEXT, CHOOSE_TEXT -> {
                                 String text = String.format("Сообщение от пользователя @%s, фамилия и имя = %s %s, userId = %s \n\n %s", user.getUserName(), user.getLastName(), user.getFirstName(), user.getId(), messageText);
                                 registerPayment(text);
-
                                 this.createMessageWithKeyboard(update.getMessage(), "Заявка зарегистрирована, данные переданы администратору, спасибо, что воспользовались ботом! \uD83D\uDE4F\uD83C\uDFFC \n\nМожете выбрать ещё что-нибудь!", priceKeyboard());
 
                             }
